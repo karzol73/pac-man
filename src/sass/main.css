@@ -1,0 +1,254 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 15px;
+  line-height: 1.5rem;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: calc(31 * 2.5vw + 2px);
+  width: calc(28 * 2.5vw + 2px);
+  background-image: url("../img/board.svg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (orientation: landscape) {
+  .grid {
+    height: calc(31 * 1.25vw + 2px);
+    width: calc(28 * 1.25vw + 2px);
+  }
+}
+
+div {
+  height: 2.5vw;
+  width: 2.5vw;
+}
+
+@media screen and (orientation: landscape) {
+  div {
+    height: calc(2.5vw / 2);
+    width: calc(2.5vw / 2);
+  }
+}
+
+.pac-dot {
+  position: relative;
+}
+
+.pac-dot:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1px solid white;
+  background: white;
+  height: 2px;
+  width: 2px;
+}
+
+.wall {
+  background: transparent;
+}
+
+.power-pellet {
+  background-color: white;
+  border-radius: 50%;
+}
+
+.pac-man {
+  background-color: red;
+  border-radius: 50%;
+}
+
+.blinky {
+  background-color: red;
+  border: 0;
+}
+
+.pinky {
+  background-color: pink;
+  border: 0;
+}
+
+.inky {
+  background-color: cyan;
+  border: 0;
+}
+
+.clyde {
+  background-color: orange;
+  border: 0;
+}
+
+.scared-ghost {
+  background-color: aquamarine;
+  border: 0;
+}
+
+.score {
+  height: 50px;
+  width: calc(28 * 2.5vw + 2px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space between;
+      -ms-flex-pack: space between;
+          justify-content: space between;
+  margin: 10px 0;
+  border: 1px solid pink;
+}
+
+@media screen and (orientation: landscape) {
+  .score {
+    width: calc(28 * 1.25vw + 2px);
+  }
+}
+
+.score__box {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid green;
+}
+
+.score__box--upper {
+  width: calc((28 * 2.5vw + 2px) / 3);
+}
+
+@media screen and (orientation: landscape) {
+  .score__box--upper {
+    width: calc((28 * 1.25vw + 2px) / 3);
+  }
+}
+
+.score__box--lower {
+  width: calc((28 * 2.5vw + 2px) / 2);
+}
+
+@media screen and (orientation: landscape) {
+  .score__box--lower {
+    width: calc((28 * 1.25vw + 2px) / 2);
+  }
+}
+
+.score__box--lower--left {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 2rem;
+}
+
+.score__box--lower--right {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-right: 2rem;
+}
+/*# sourceMappingURL=main.css.map */
