@@ -7,7 +7,7 @@ let pacmanCurrentIndex = 658
 let pacmanSpeed = 150
 let pacmanRotate = 180
 
-function movePacman() {
+const movePacman = () => {
 
     let pacmanDirection = -1
     let selectedDirection = pacmanDirection

@@ -23,7 +23,7 @@ const ghosts = [
 ]
 
 // move ghosts randomly
-function moveGhost(ghost) {
+const moveGhost = (ghost) => {
     const directions = [-1, +1, width, -width]
     let direction = directions[Math.floor(Math.random() * directions.length)]
 
@@ -59,7 +59,7 @@ function moveGhost(ghost) {
 }
 
 //make the ghosts stop flashing
-function unScareGhosts() {
+const unScareGhosts = () => {
     ghosts.forEach(ghost => ghost.isScared = false)
 }
 

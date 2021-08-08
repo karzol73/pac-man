@@ -6,14 +6,14 @@ const scoreDisplay = document.getElementById('score')
 
 let score = 0
 
-function pacDotEaten() {
+const pacDotEaten = () => {
     if (squares[pacmanCurrentIndex].classList.contains('pac-dot')) {
         addScore(10)
         squares[pacmanCurrentIndex].classList.remove('pac-dot')
     }
 }
 
-function powerPelletEaten() {
+const powerPelletEaten = () => {
     if (squares[pacmanCurrentIndex].classList.contains('power-pellet')) {
         addScore(50)
         ghosts.forEach(ghost => ghost.isScared = true)
@@ -22,7 +22,7 @@ function powerPelletEaten() {
     }
 }
 
-function checkForGameOver() {
+const checkForGameOver = () => {
     if (squares[pacmanCurrentIndex].classList.contains('ghost') &&
         !squares[pacmanCurrentIndex].classList.contains('scared-ghost')) {
         ghosts.forEach(ghost => clearInterval(ghost.timerId))
@@ -31,7 +31,7 @@ function checkForGameOver() {
     }
 }
 
-function checkForWin() {
+const checkForWin = () => {
     if (score === 274) {
         ghosts.forEach(ghost => clearInterval(ghost.timerId))
         document.removeEventListener('keyup', movePacman)
@@ -39,7 +39,7 @@ function checkForWin() {
     }
 }
 
-function addScore(value) {
+const addScore = (value) => {
     score += value
     scoreDisplay.innerHTML = score
 }

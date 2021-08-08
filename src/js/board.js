@@ -3,7 +3,7 @@ import { layout } from './setup'
 const grid = document.querySelector('.grid')
 const squares = []
 
-function createBoard() {
+const createBoard = () => {
     for (let i = 0; i < layout.length; i++) {
         const square = document.createElement('div')
         grid.appendChild(square)
